@@ -1,0 +1,85 @@
+/* src/components/Navbar.css */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2196F3; /* Materyal tasarım renk önerisi */
+  padding: 10px;
+}
+
+.logo {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.hamburger {
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.auth-buttons {
+  margin-left: auto;
+}
+
+/* Material Design buton stilleri */
+.auth-buttons a,
+.auth-buttons button {
+  color: white;
+  background-color: #ff4081; /* Materyal tasarım renk önerisi */
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth-buttons a:hover,
+.auth-buttons button:hover {
+  background-color: #f50057; /* Hover durumunda renk değişimi */
+}
+
+/* Media Query ekleyerek küçük ekranlarda görünümü düzenleyebilirsiniz */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #2196F3; /* Materyal tasarım renk önerisi */
+    text-align: center;
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+}

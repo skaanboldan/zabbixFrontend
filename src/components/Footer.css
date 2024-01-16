@@ -1,0 +1,21 @@
+/* src/components/Footer.css */
+footer {
+  background-color: #2196F3; /* Materyal tasarım renk önerisi */
+  color: #fff; /* Beyaz metin renk */
+  text-align: center;
+  padding: 16px; /* Daha geniş bir iç kenar boşluğu */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Düzeltme: A etiketinin stilleri eklendi */
+a {
+  color: #fff; /* Beyaz renk */
+  text-decoration: none;
+  transition: color 0.3s ease; /* Pürüzsüz renk geçişi eklenmiştir */
+}
+
+a:hover {
+  color: #61dafb; /* Hover durumunda mavi renk */
+}
