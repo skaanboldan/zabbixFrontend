@@ -3,7 +3,7 @@ footer {
   background-color: #2196F3; /* Materyal tasarım renk önerisi */
   color: #fff; /* Beyaz metin renk */
   text-align: center;
-  padding: 16px; /* Daha geniş bir iç kenar boşluğu */
+  padding: 1px; /* Daha geniş bir iç kenar boşluğu */
   position: fixed;
   bottom: 0;
   width: 100%;

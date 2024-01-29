@@ -1,34 +1,34 @@
 // src/components/LoginForm.js
 import React, { useState } from 'react';
-import { makeStyles } from '@mui/system';
+import { styled } from '@mui/system';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    // Eğer gerekirse genel stiller buraya eklenebilir.
-  },
-  form: {
-    display: 'flex',
-    flexDirection: 'column',
-    maxWidth: '300px', // Formun maksimum genişliği
-    margin: '0 auto', // Formu ortalamak için
-  },
-  input: {
-    margin: '8px 0',
-  },
-  button: {
-    marginTop: '16px',
-  },
-}));
+const StyledDiv = styled('div')({
+  // General styles if needed
+});
+
+const StyledForm = styled('form')({
+  display: 'flex',
+  flexDirection: 'column',
+  maxWidth: '300px',
+  margin: '0 auto',
+});
+
+const StyledInput = styled('input')({
+  margin: '8px 0',
+});
+
+const StyledButton = styled('button')({
+  marginTop: '16px',
+});
 
 const LoginForm = ({ onLogin }) => {
-  const classes = useStyles();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (username === 'kullanici' && password === 'sifre') {
+    if (username === 'admin' && password === 'admin') {
       onLogin(username);
     } else {
       alert('Kullanıcı adı veya şifre hatalı.');
@@ -39,34 +39,37 @@ const LoginForm = ({ onLogin }) => {
   };
 
   return (
-    <div className={classes.root}>
-      <h2>Giriş Yap</h2>
-      <form className={classes.form} onSubmit={handleSubmit}>
+    <StyledDiv>
+      <h2 style={{ textAlign: 'center' }}>Giriş Yap</h2>
+      <StyledForm onSubmit={handleSubmit}>
         <label htmlFor="username">Kullanıcı Adı:</label>
-        <input
+        <StyledInput
           type="text"
           id="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className={classes.input}
           required
+          sx={{ border: '1px solid #ccc', padding: '8px' }}
         />
 
         <label htmlFor="password">Şifre:</label>
-        <input
+        <StyledInput
           type="password"
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className={classes.input}
           required
+          sx={{ border: '1px solid #ccc', padding: '8px' }}
         />
 
-        <button type="submit" className={classes.button}>
+        <StyledButton
+          type="submit"
+          sx={{ backgroundColor: '#4caf50', color: 'white', padding: '8px 16px', cursor: 'pointer' }}
+        >
           Giriş Yap
-        </button>
-      </form>
-    </div>
+        </StyledButton>
+      </StyledForm>
+    </StyledDiv>
   );
 };
 

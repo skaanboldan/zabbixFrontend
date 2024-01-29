@@ -1,37 +1,21 @@
-// src/components/LineChart.js
+// MyChartComponent.js dosyası
+
 import React from 'react';
-import { Line } from 'react-chartjs-2';
+import LineChart from './LineChart'; // LineChart bileşeninin bulunduğu dosyanın yolu uygun şekilde güncellenmeli
 
-const LineChart = ({ data }) => {
-  const chartData = {
-    labels: data.map(entry => entry.date),
-    datasets: [
-      {
-        label: 'Örnek Veri Seti',
-        data: data.map(entry => entry.value),
-        fill: false,
-        borderColor: 'rgba(75,192,192,1)',
-      },
-    ],
-  };
-
-  const options = {
-    scales: {
-      x: {
-        type: 'linear',
-        position: 'bottom',
-      },
-      y: {
-        min: 0,
-      },
-    },
-  };
-
+function MyChartComponent() {
   return (
-    <div>
-      <Line data={chartData} options={options} />
-    </div>
+    <LineChart
+      xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
+      series={[
+        {
+          data: [2, 5.5, 2, 8.5, 1.5, 5],
+        },
+      ]}
+      width={500} 
+      height={300}
+    />
   );
-};
+}
 
-export default LineChart;
+export default MyChartComponent;
